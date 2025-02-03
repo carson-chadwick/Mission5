@@ -1,24 +1,42 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Meta tags for character encoding and responsive design -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Page title displayed on the browser tab -->
     <title>FishingHobby</title>
+
+    <!-- Bootstrap CSS (responsive design and styling) -->
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    <!-- Custom CSS for additional styling (site-specific styles) -->
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+
+    <!-- Additional custom CSS for mission-specific styles (Mission5) -->
     <link rel="stylesheet" href="~/Mission5.styles.css" asp-append-version="true" />
+
+    <!-- Favicon for the website (icon shown on browser tab) -->
     <link rel="icon" href="~/images/fish.png" type="image/x-icon" />
 
 </head>
 <body>
+
+    <!-- Header section containing the navigation bar -->
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
+                <!-- Branding (logo or link to homepage) -->
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Mission5</a>
+
+                <!-- Hamburger menu for mobile view (collapsible navbar) -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+
+                <!-- Navbar links (Home and PayMe) -->
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
@@ -32,23 +50,35 @@
             </div>
         </nav>
     </header>
+
+    <!-- Main content section where specific page content will be rendered -->
     <div class="container">
         <main role="main" class="pb-3">
+            <!-- This is where the content of each specific view will be injected -->
             @RenderBody()
         </main>
     </div>
 
+    <!-- Footer section with copyright and contact information -->
     <footer class="footer mt-5">
         <div class="container">
             <p class="text-center">
                 &copy; @DateTime.Now.Year Mission5. All rights reserved.
+                <!-- LinkedIn link to the developer's profile -->
                 Built by <a href="https://www.linkedin.com/in/carson-chadwick/" target="_blank">Carson Chadwick</a>
             </p>
         </div>
     </footer>
+
+    <!-- JavaScript dependencies for jQuery and Bootstrap functionality -->
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JavaScript file for additional client-side functionality -->
     <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <!-- This will render additional scripts if any are provided by the views (optional) -->
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
+
