@@ -1,0 +1,43 @@
+﻿<div class="container">
+    <h2>Tutoring Cost Calculator</h2>
+    <div class="form-group">
+        <label for="hours">Enter the number of hours:</label>
+        <input type="number" id="hours" placeholder="Enter hours">
+    </div>
+    <div class="form-group">
+        <label for="rate">Hourly rate:</label>
+        <input type="text" id="rate" value="25" readonly>
+    </div>
+    <button id="calculate">Calculate Total</button>
+    <!-- Use an input field to display the total -->
+    <div class="form-group">
+        <label for="total-output">Total Cost:</label>
+        <input type="text" id="total-output" readonly>
+    </div>
+</div>
+
+<!-- jQuery Script -->
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script>
+    $(document).ready(function() {
+      $('#calculate').click(function() {
+        // Get the number of hours entered by the user
+        let hours = parseFloat($('#hours').val());
+
+        // Validate that the user has entered a positive number
+        if (isNaN(hours) || hours <= 0) {
+          alert("Please enter a valid positive number for hours.");
+        } else {
+          // Charge per hour is fixed at 25 in this example
+          let rate = parseFloat($('#rate').val());
+
+          // Calculate the total
+          let total = hours * rate;
+
+          // Display the result in the output box
+          $('#total-output').val("Total: $" + total.toFixed(2));  // Use .val() for input fields
+        }
+      });
+    });
+</script>
+
