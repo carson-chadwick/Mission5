@@ -4,9 +4,11 @@
     <!-- Meta tags for character encoding and responsive design -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    @{
+        ViewData["Title"] = "Fishing Hobby";
+    }
     <!-- Page title displayed on the browser tab -->
-    <title>FishingHobby</title>
+	<title>@ViewData["Title"]</title>
 
     <!-- Bootstrap CSS (responsive design and styling) -->
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
@@ -25,10 +27,9 @@
 
     <!-- Header section containing the navigation bar -->
     <header>
+        <h1>@ViewData["Title"]</h1>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
-                <!-- Branding (logo or link to homepage) -->
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">FishingHobby</a>
 
                 <!-- Hamburger menu for mobile view (collapsible navbar) -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
